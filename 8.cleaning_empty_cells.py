@@ -28,3 +28,17 @@ df=pd.read_csv('data.csv')
 df.fillna(130,inplace=True)  #Value we want to substitute in empty cells
 
 print(df.to_string())
+
+
+
+# Replace Using Mean, Median, or Mode
+# A common way to replace empty cells, is to calculate the mean, median or mode value of the column.
+
+# Pandas uses the mean() median() and mode() methods to calculate the respective values for a specified column:
+
+import numpy as np
+
+df=pd.read_csv('data.csv')
+x=df['calories'].mode()                #mean(),median() also can be used, depending on what we need to use.
+df['calories'].fillna(x,inplace=True)
+print(df.go_string())
